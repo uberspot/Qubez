@@ -6,6 +6,9 @@ forming words from individual letters on a square 3D gameboard. The
 words are formed across and down in crossword fashion. The goal
 of the game is to get the most points at the end of the game.
 
+The game was developed by Pavlos Sarbinowski and Vangos Pterneas 
+as part of the Human Computer Interaction course in A.U.E.B.
+
 Rules
 ------
 
