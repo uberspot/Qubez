@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Qubez.UserControls.PlayersList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="50" d:DesignWidth="200">
+    
+    <Grid x:Name="LayoutRoot">
+        <ListBox Name="lbxPlayers" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                        <TextBlock Name="tblPlayerName" Text="{Binding Name}" />
+                        <TextBlock Name="tblPlayerScore" Text="{Binding Score}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

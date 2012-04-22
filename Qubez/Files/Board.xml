@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<board>
+  <size>10</size>
+  <maxPlayers>5</maxPlayers>
+  <letters>7</letters>
+  <useDictionary>true</useDictionary>
+</board>

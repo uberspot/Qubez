@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Qubez.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" xmlns:my="clr-namespace:Qubez.UserControls">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Style="{StaticResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <my:WebBrowser x:Name="twitter" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" />
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+           <TextBlock x:Name="ApplicationTitle" Text="QUBEZ" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1">
+            <Canvas Name="gameCanvas">
+                <my:PlayersList x:Name="playersList" Canvas.Left="270" Canvas.Top="-55" Width="200" />
+                <my:Board x:Name="gameBoard" Canvas.ZIndex="-9999" Canvas.Left="0" Canvas.Top="0" Height="480" Width="480" />
+                <my:InfoBox x:Name="infoBox" Canvas.Left="0" Canvas.Top="490" Width="480" Height="60" />
+            </Canvas>
+        </Grid>        
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Opacity="0.7" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="btnSwapLetter"  IconUri="/Images/swap.png" Text="swap letter" Click="BtnSwapLetter_Click" />
+            <shell:ApplicationBarIconButton x:Name="btnLoseTurn" IconUri="/Images/cancel.png" Text="lose turn" Click="BtnLoseTurn_Click" />
+            <shell:ApplicationBarIconButton x:Name="btnSubmit" IconUri="/Images/check.png" Text="submit" Click="BtnSubmit_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="itemShareTwitter" Text="Share on Twitter" Click="ItemShareTwitter_Click" />
+                <!--<shell:ApplicationBarMenuItem x:Name="itemScreenshot" Text="Save sceenshot" Click="ItemScreenshot_Click" />-->
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

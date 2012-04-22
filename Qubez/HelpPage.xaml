@@ -1,0 +1,83 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Qubez.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Style="{StaticResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <Image Source="/Images/logo.png" Height="166" Canvas.Top="-55" HorizontalAlignment="Center" Width="357" />
+            <TextBlock x:Name="PageTitle" HorizontalAlignment="Center" Text="Game Rules" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <ScrollViewer Height="348" HorizontalAlignment="Left" Name="ScrollViewer1" VerticalAlignment="Top" Width="450">
+                    <TextBlock FontSize="26" TextAlignment="Left" TextWrapping="Wrap">
+Qubez is a word game in which 2 or more players score points by 
+forming words from individual letters on a square 3D gameboard. The 
+words are formed across and down in crossword fashion. The goal
+of the game is to get the most points at the end of the game.
+<LineBreak/><LineBreak/>
+Rules
+<LineBreak/>
+The first player must form a horizontal or vertical word with at 
+least one letter on one of the red squares at the middle of the 
+board. In each consecutive round a player can form a new word
+by either <LineBreak/>
+- connecting a new word to any letter of an existing 
+word on the board <LineBreak/>
+or by <LineBreak/>
+- stacking one or more letters on top of an
+existing word on the board.<LineBreak/>
+Notes: <LineBreak/>
+a) You can't place a new letter on an existing one that's the same. 
+(e.g. putting the letter 'A' on top of letter 'A')<LineBreak/>
+b) If you connect new letters to an existing word on the board each 
+newly created word must be valid.<LineBreak/>
+c) You can't stack more than five letters on each square.<LineBreak/>
+<LineBreak/><LineBreak/>
+You can choose to do automatic dictionary checks on each new word via 
+the settings. In general the following categories of words are not allowed:
+1) Names<LineBreak/>
+2) Acronyms<LineBreak/>
+3) Words that need an apostrophe(')<LineBreak/>
+4) Words that need a dash(-)<LineBreak/>
+4) Definite articles<LineBreak/>
+<LineBreak/><LineBreak/>
+If you cannot form a word on your round you can either pass your turn
+or you can change one of the letters you have in front of you with a random
+new one. If you swap a letter you lose your turn.<LineBreak/>
+<LineBreak/>
+The game ends when:
+- one of the players has no more letters to use<LineBreak/>
+- no player can form any more words<LineBreak/>
+- each player passes his turn to the next one in a round
+<LineBreak/>
+<Bold>The player with the highest score wins!</Bold></TextBlock>
+                </ScrollViewer>
+                <Border Style="{StaticResource BorderStyle}" Width="430" Height="75">
+                    <Button Name="btnOk" Content="Ok" BorderThickness="0" Click="btnOk_Click" />
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

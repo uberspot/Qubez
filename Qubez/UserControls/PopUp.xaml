@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Qubez.UserControls.PopUp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="900" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Width="480" Height="900">
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.7" />
+        </Grid.Background>
+        <Border Background="White" CornerRadius="20" Width="400" Height="200">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="tblMessage" Text="{Binding Message}" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black" FontSize="32" />
+                <Button Name="btnClose" Content="Close" Click="Close_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#042591" Offset="1"/>
+                            <GradientStop Color="#4C83E0" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>            
+        </Border>
+    </Grid>
+</UserControl>

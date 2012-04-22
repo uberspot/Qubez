@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Qubez.UserControls.Rectangle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="45" d:DesignWidth="45">
+
+    <StackPanel Name="spBackground" Margin="1" Orientation="Horizontal">
+        <StackPanel.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#d8a4fc" />
+                <GradientStop Color="#000" Offset="2" />
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <TextBlock Name="txtNumber" Text="{Binding Number}" FontSize="15" Foreground="White" Margin="5,0,0,0" />
+        <TextBlock Name="txtLetter" Text="{Binding Letter}" FontSize="{Binding LetterSize}" Foreground="White" Margin="0" />
+    </StackPanel>
+</UserControl>
